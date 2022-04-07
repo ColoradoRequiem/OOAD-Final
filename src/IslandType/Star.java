@@ -9,9 +9,11 @@ public class Star implements CreateIsland {
         for (int i=0; i<size; i++) {
             ArrayList<Event> row = new ArrayList<Event>();
             for (int j=0; j<size; j++) {
+                if (i==0 & j==0) {
+                    row.add(new Admin(new BasicWater(new Event(i, j, size, map))));
+                }
                 row.add(new BasicWater(new Event(i, j, size, map)));
             }
-
             map.add(row);
         }
 
@@ -20,7 +22,7 @@ public class Star implements CreateIsland {
         int islandSize = Math.floorDiv(size, 2);
         int tmpSize = islandSize;
 
-        for (int i=0; i<islandSize; i++) {
+        for (int i=0; i<islandSize+1; i++) {
             for (int j=tmpSize; j>0; j--) {
                 // map.get(center).set(center, new BasicLand(new Event(i, j, size, map)));
 

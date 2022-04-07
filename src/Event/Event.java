@@ -11,9 +11,9 @@ public class Event {
     private String _westDescription;
     private String _eastDescription;
 
-    private ArrayList<Integer> _mapPos = new ArrayList<Integer>();
+    protected ArrayList<Integer> _mapPos = new ArrayList<Integer>();
     private int _size;
-    private ArrayList<ArrayList<Event>> _map;
+    protected ArrayList<ArrayList<Event>> _map;
 
     public Event() { // used for item decorator
     }
