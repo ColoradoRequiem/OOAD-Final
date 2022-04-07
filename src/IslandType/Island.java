@@ -20,6 +20,7 @@ public class Island {
     private ArrayList<Integer> _position = new ArrayList<Integer>();
 
     public Island() {
+        _player = new Player();
         _season = Utils.randSeason();
         _map = make(new Star());
         _position.add(0);
@@ -27,6 +28,7 @@ public class Island {
         explore();
     }
     public Island(Season s) {
+        _player = new Player();
         _season = s;
         _map = make(new Star());
         _position.add(0);
@@ -42,14 +44,18 @@ public class Island {
 
             ArrayList<Action> actionList = _map.get(_position.get(0)).get(_position.get(1)).getActions();
 
-            int count = 0;
-            for (Action a : actionList) {
-                System.out.println(count + ": " + a.getButtonDescription());
-                count += 1;
+            ArrayList<Integer> count = new ArrayList<Integer>();
+            int printCount = 0;
+            for (int i=0; i< actionList.size(); i++) {
+                if (actionList.get(i).getTruth(_player)) {
+                    System.out.println(printCount + ": " + actionList.get(i).getButtonDescription());
+                    printCount += 1;
+                    count.add(i);
+                }
             }
             // choose action
             int action = readInput();
-            ArrayList<Integer> newPos = actionList.get(action).click();
+            ArrayList<Integer> newPos = actionList.get(count.get(action)).click();
             _position = newPos;
         }
     }
