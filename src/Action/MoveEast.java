@@ -10,6 +10,9 @@ public class MoveEast extends Action {
         _mapPos = mapPos;
         _map = map;
         _buttonDescription = "Move east.";
+        _req = _map.get(_mapPos.get(0)).get(_mapPos.get(1)+1).getApproachableReq();
+
+        // System.out.println(mapPos.get(0)+" "+(mapPos.get(1)+1)+" "+_req);
     }
 
     public String getDescription() {

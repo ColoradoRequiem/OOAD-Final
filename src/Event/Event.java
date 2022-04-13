@@ -1,6 +1,9 @@
 package Event;
 
 import Action.*;
+import Requirement.Requirement;
+import Player.*;
+
 import java.util.ArrayList;
 
 public class Event {
@@ -10,6 +13,8 @@ public class Event {
     private String _southDescription;
     private String _westDescription;
     private String _eastDescription;
+
+    private Requirement _approachReq = null;
 
     protected ArrayList<Integer> _mapPos = new ArrayList<Integer>();
     private int _size;
@@ -30,6 +35,8 @@ public class Event {
         _southDescription = "";
         _westDescription = "";
         _eastDescription = "";
+
+        // _approachable = true;
     }
     public String getDescription() {
         String desc = _description;
@@ -37,7 +44,6 @@ public class Event {
         for (Action a : actionList) { // need get actions for decorator here
             desc += " "+a.getDescription();
         }
-        // setActions();
         return desc;
     }
 
@@ -48,6 +54,7 @@ public class Event {
 
     public void getMoveActions() {
         // These are the basic actions and what the decorator adds onto
+
         if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) { // need some boolean for if this move is possible
             _actions.add(new MoveSouth(_map, _mapPos));
         }
@@ -68,6 +75,9 @@ public class Event {
         return _actions;
     }
     public void setActions() {_actions = new ArrayList<Action>();}
+    public void setApproachableReq(Requirement r) {_approachReq = r;}
+    public Requirement getApproachableReq() {return _approachReq;}
+
 
 
 }
