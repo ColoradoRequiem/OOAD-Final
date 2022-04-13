@@ -3,6 +3,7 @@ package Event;
 import Action.Action;
 
 import java.util.ArrayList;
+import Player.*;
 
 public class BasicWater extends EventDecorator {
     public BasicWater(Event e) {

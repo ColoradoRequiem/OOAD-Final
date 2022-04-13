@@ -2,6 +2,7 @@ package Event;
 import Action.*;
 
 import java.util.ArrayList;
+import Player.*;
 
 public abstract class EventDecorator extends Event {
     protected Event _decoratedEvent;

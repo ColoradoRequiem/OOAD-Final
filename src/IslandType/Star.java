@@ -3,7 +3,7 @@ import Event.*;
 
 import java.util.ArrayList;
 
-public class Star implements CreateIsland {
+public class Star extends Utils implements CreateIsland  {
     public ArrayList<ArrayList<Event>> make(int size) { // make size always odd to have a center
         ArrayList<ArrayList<Event>> map = new ArrayList<ArrayList<Event>>();
         for (int i=0; i<size; i++) {
@@ -35,10 +35,11 @@ public class Star implements CreateIsland {
                 map.get(center).set(center+j, new BasicLand(new Event(center, center+j, size, map)));
 
                 if (i-1>0) {
-                    map.get(center-i+1).set(center+j-1, new BasicLand(new Event(center-i+1, center+j-1, size, map)));
-                    map.get(center-i+1).set(center-j+1, new BasicLand(new Event(center-i+1, center-j+1, size, map)));
-                    map.get(center+i-1).set(center+j-1, new BasicLand(new Event(center+i-1, center+j-1, size, map)));
-                    map.get(center+i-1).set(center-j+1, new BasicLand(new Event(center+i-1, center-j+1, size, map)));
+
+                    map.get(center-i+1).set(center+j-1, new Cliff(new Event(center-i+1, center+j-1, size, map)));
+                    map.get(center-i+1).set(center-j+1, new Cliff(new Event(center-i+1, center-j+1, size, map)));
+                    map.get(center+i-1).set(center+j-1, new Cliff(new Event(center+i-1, center+j-1, size, map)));
+                    map.get(center+i-1).set(center-j+1, new Cliff(new Event(center+i-1, center-j+1, size, map)));
                 }
             }
             if (i-1>0) {
