@@ -37,7 +37,6 @@ public class Island {
     }
 
     public void explore() {
-
         while(true) {
             System.out.println("Explore: "+_position);
             System.out.print(_map.get(_position.get(0)).get(_position.get(1)).getDescription()+"\n");
@@ -56,7 +55,8 @@ public class Island {
             // choose action
             int action = readInput();
             ArrayList<Integer> newPos = actionList.get(count.get(action)).click();
-            _position = newPos;
+            _position.set(0, newPos.get(0));
+            _position.set(1, newPos.get(1));
         }
     }
 

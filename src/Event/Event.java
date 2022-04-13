@@ -30,9 +30,25 @@ public class Event {
         _southDescription = "";
         _westDescription = "";
         _eastDescription = "";
+    }
+    public String getDescription() {
+        String desc = _description;
+        ArrayList<Action> actionList = getActions();
+        for (Action a : actionList) { // need get actions for decorator here
+            desc += " "+a.getDescription();
+        }
+        // setActions();
+        return desc;
+    }
 
+    public String getNorthDescription() {return _northDescription;}
+    public String getSouthDescription() {return _southDescription;}
+    public String getWestDescription() {return _westDescription;}
+    public String getEastDescription() {return _eastDescription;}
+
+    public void getMoveActions() {
         // These are the basic actions and what the decorator adds onto
-        if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) {
+        if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) { // need some boolean for if this move is possible
             _actions.add(new MoveSouth(_map, _mapPos));
         }
         if (0<_mapPos.get(0) && _mapPos.get(0)<=_size-1) {
@@ -45,21 +61,13 @@ public class Event {
             _actions.add(new MoveWest(_map, _mapPos));
         }
     }
-    public String getDescription() {
-        String desc = _description;
-        ArrayList<Action> actionList = this.getActions();
-        for (Action a : actionList) { // need get actions for decorator here
-            desc += " "+a.getDescription();
-        }
 
-        return desc;
+    public ArrayList<Action> getActions() {
+        _actions = new ArrayList<Action>();
+        getMoveActions();
+        return _actions;
     }
-    public String getNorthDescription() {return _northDescription;}
-    public String getSouthDescription() {return _southDescription;}
-    public String getWestDescription() {return _westDescription;}
-    public String getEastDescription() {return _eastDescription;}
-
-    public ArrayList<Action> getActions() {return _actions;}
+    public void setActions() {_actions = new ArrayList<Action>();}
 
 
 }
