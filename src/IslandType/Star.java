@@ -12,7 +12,9 @@ public class Star implements CreateIsland {
                 if (i==0 & j==0) {
                     row.add(new Admin(new BasicWater(new Event(i, j, size, map))));
                 }
-                row.add(new BasicWater(new Event(i, j, size, map)));
+                else {
+                    row.add(new BasicWater(new Event(i, j, size, map)));
+                }
             }
             map.add(row);
         }
