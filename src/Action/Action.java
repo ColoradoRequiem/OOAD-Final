@@ -12,7 +12,7 @@ public abstract class Action {
     protected String _buttonDescription;
     protected ArrayList<ArrayList<Event>> _map;
     protected ArrayList<Integer> _mapPos;
-    protected Requirement _req = null;
+    protected Requirement _req;
 
 
     public abstract ArrayList<Integer> click(); // always return new position

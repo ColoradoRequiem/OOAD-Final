@@ -4,6 +4,7 @@ import Action.Action;
 
 import java.util.ArrayList;
 import Player.*;
+import Requirement.Requirement;
 
 public class Coast extends EventDecorator {
     public Coast(Event e) {
@@ -17,4 +18,5 @@ public class Coast extends EventDecorator {
     public ArrayList<Action> getActions() {
         return this._decoratedEvent.getActions(); // Drop anchor -> Go ashore
     }
+    public Requirement getApproachableReq() {return _decoratedEvent.getApproachableReq();} // just like actions and desc.
 }

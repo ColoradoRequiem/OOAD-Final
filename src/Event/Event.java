@@ -14,7 +14,7 @@ public class Event {
     private String _westDescription;
     private String _eastDescription;
 
-    private Requirement _approachReq = null;
+    protected Requirement _approachReq = null;
 
     protected ArrayList<Integer> _mapPos = new ArrayList<Integer>();
     private int _size;
@@ -53,8 +53,6 @@ public class Event {
     public String getEastDescription() {return _eastDescription;}
 
     public void getMoveActions() {
-        // These are the basic actions and what the decorator adds onto
-
         if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) { // need some boolean for if this move is possible
             _actions.add(new MoveSouth(_map, _mapPos));
         }

@@ -10,7 +10,6 @@ public class Cliff extends EventDecorator {
     public Cliff(Event e) {
 
         e.setApproachableReq(new CliffRequirement());
-        // System.out.println(_mapPos.get(0)+" "+_mapPos.get(1)+" "+e.getApproachableReq());
         _decoratedEvent = e;
     }
     public String getDescription() {return "The cliffs here are impassable."+this._decoratedEvent.getDescription();}
@@ -19,6 +18,7 @@ public class Cliff extends EventDecorator {
     public String getWestDescription() {return this._decoratedEvent.getWestDescription()+"To the east you see towering cliffs.";}
     public String getEastDescription() {return this._decoratedEvent.getEastDescription()+"To the west you see towering cliffs.";}
     public ArrayList<Action> getActions() {
-        return this._decoratedEvent.getActions(); // Drop anchor -> Go ashore
+        return this._decoratedEvent.getActions();
     }
+    public Requirement getApproachableReq() {return _decoratedEvent.getApproachableReq();} // just like actions and desc.
 }
