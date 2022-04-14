@@ -11,8 +11,6 @@ public class MoveEast extends Action {
         _map = map;
         _buttonDescription = "Move east.";
         _req = _map.get(_mapPos.get(0)).get(_mapPos.get(1)+1).getApproachableReq();
-
-        // System.out.println(mapPos.get(0)+" "+(mapPos.get(1)+1)+" "+_req);
     }
 
     public String getDescription() {
@@ -21,6 +19,7 @@ public class MoveEast extends Action {
     }
 
     public ArrayList<Integer> click() {
+
         ArrayList<Integer> newPos = new ArrayList<Integer>();
         newPos.add(_mapPos.get(0));
         newPos.add(_mapPos.get(1)+1);

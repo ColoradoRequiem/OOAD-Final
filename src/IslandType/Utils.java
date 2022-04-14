@@ -35,7 +35,7 @@ public class Utils {
         System.out.println(s);
     }
 
-    public int readInput(){
+    public static int readInput(){
         // https://www.geeksforgeeks.org/ways-to-read-input-from-console-in-java/#:~:text=1%20Using%20Buffered%20Reader%20Class%20This%20is%20the,command%20line.%20...%204%20Using%20Command%20line%20argument
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

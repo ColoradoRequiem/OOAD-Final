@@ -34,7 +34,6 @@ public class Island {
     }
 
     public String getDescription() {
-        // System.out.println("Explore: "+_position);
         return _map.get(_position.get(0)).get(_position.get(1)).getDescription() + "\n";
     }
 
@@ -47,30 +46,13 @@ public class Island {
                 ret.add(actionList.get(i));
             }
         }
+        _map.get(_position.get(0)).get(_position.get(1)).setActions(); // might not be needed
         return ret;
     }
 
-//    public void explore() {
-//        while(true) {
-//            System.out.println("Explore: "+_position);
-//            System.out.print(_map.get(_position.get(0)).get(_position.get(1)).getDescription()+"\n");
-//
-//            ArrayList<Action> actionList = _map.get(_position.get(0)).get(_position.get(1)).getActions();
-//
-//            ArrayList<Integer> count = new ArrayList<Integer>();
-//            int printCount = 0;
-//            for (int i=0; i< actionList.size(); i++) {
-//                if (actionList.get(i).getTruth(_player)) {
-//                    System.out.println(printCount + ": " + actionList.get(i).getButtonDescription());
-//                    printCount += 1;
-//                    count.add(i);
-//                }
-//            }
-//            // choose action
-//            int action = readInput();
-//            ArrayList<Integer> newPos = actionList.get(count.get(action)).click();
-//        }
-//    }
+    public ArrayList<Integer> getPosition() {
+        return _position;
+    }
 
     public ArrayList<ArrayList<Event>> make(CreateIsland type) {
         return type.make(_size);
