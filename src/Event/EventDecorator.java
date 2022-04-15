@@ -2,7 +2,6 @@ package Event;
 import Action.*;
 
 import java.util.ArrayList;
-import Player.*;
 
 public abstract class EventDecorator extends Event {
     protected Event _decoratedEvent;
@@ -12,5 +11,5 @@ public abstract class EventDecorator extends Event {
     public abstract String getSouthDescription();
     public abstract String getWestDescription();
     public abstract String getEastDescription();
-    public abstract ArrayList<Action> getActions();
+    public abstract ArrayList<GameAction> getActions();
 }

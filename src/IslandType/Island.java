@@ -2,7 +2,6 @@ package IslandType;
 
 import Action.*;
 import Event.Event;
-import IslandType.*;
 import Player.Player;
 
 
@@ -38,15 +37,16 @@ public class Island {
         return _map.get(_position.get(0)).get(_position.get(1)).getDescription() + "\n";
     }
 
-    public ArrayList<Action> getAvailableActions() {
-        ArrayList<Action> actionList = _map.get(_position.get(0)).get(_position.get(1)).getActions();
-        ArrayList<Action> ret = new ArrayList<Action>();
+    public ArrayList<GameAction> getAvailableActions() {
+        ArrayList<GameAction> gameActionList = _map.get(_position.get(0)).get(_position.get(1)).getActions();
+        ArrayList<GameAction> ret = new ArrayList<GameAction>();
 
-        for (int i=0; i< actionList.size(); i++) {
-            if (actionList.get(i).getTruth(_player)) {
-                ret.add(actionList.get(i));
+        for (int i = 0; i< gameActionList.size(); i++) {
+            if (gameActionList.get(i).getTruth(_player)) {
+                ret.add(gameActionList.get(i));
             }
         }
+        System.out.println(ret.size());
         return ret;
     }
 
@@ -79,6 +79,8 @@ public class Island {
         _position.set(0, x);
         _position.set(1, y);
     }
-
+    public ArrayList<Integer> get_position(){
+        return _position;
+    }
 
 }

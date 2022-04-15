@@ -1,7 +1,6 @@
 package Event;
 
-import Action.Action;
-import Player.Player;
+import Action.GameAction;
 import Requirement.*;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class Cliff extends EventDecorator {
     public String getSouthDescription() {return this._decoratedEvent.getSouthDescription()+"To the north you see towering cliffs.";}
     public String getWestDescription() {return this._decoratedEvent.getWestDescription()+"To the east you see towering cliffs.";}
     public String getEastDescription() {return this._decoratedEvent.getEastDescription()+"To the west you see towering cliffs.";}
-    public ArrayList<Action> getActions() {
+    public ArrayList<GameAction> getActions() {
         return this._decoratedEvent.getActions(); // Drop anchor -> Go ashore
     }
 }

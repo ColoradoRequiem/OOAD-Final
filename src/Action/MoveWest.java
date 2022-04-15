@@ -1,11 +1,10 @@
 package Action;
 
 import Event.Event;
-import IslandType.Island;
 
 import java.util.ArrayList;
 
-public class MoveWest extends Action {
+public class MoveWest extends GameAction {
     public MoveWest(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
         _mapPos = mapPos;
         _map = map;
