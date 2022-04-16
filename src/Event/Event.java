@@ -2,12 +2,11 @@ package Event;
 
 import Action.*;
 import Requirement.Requirement;
-import Player.*;
 
 import java.util.ArrayList;
 
 public class Event {
-    private ArrayList<Action> _actions = new ArrayList<Action>();
+    private ArrayList<GameAction> _Game_actions = new ArrayList<GameAction>();
     private String _description;
     private String _northDescription;
     private String _southDescription;
@@ -40,8 +39,8 @@ public class Event {
     }
     public String getDescription() {
         String desc = _description;
-        ArrayList<Action> actionList = getActions();
-        for (Action a : actionList) { // need get actions for decorator here
+        ArrayList<GameAction> gameActionList = getActions();
+        for (GameAction a : gameActionList) { // need get actions for decorator here
             desc += " "+a.getDescription();
         }
         return desc;
@@ -54,25 +53,26 @@ public class Event {
 
     public void getMoveActions() {
         if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) { // need some boolean for if this move is possible
-            _actions.add(new MoveSouth(_map, _mapPos));
+            _Game_actions.add(new MoveSouth(_map, _mapPos));
         }
         if (0<_mapPos.get(0) && _mapPos.get(0)<=_size-1) {
-            _actions.add(new MoveNorth(_map, _mapPos));
+            _Game_actions.add(new MoveNorth(_map, _mapPos));
         }
         if (0<=_mapPos.get(1) && _mapPos.get(1)<_size-1) {
-            _actions.add(new MoveEast(_map, _mapPos));
+            _Game_actions.add(new MoveEast(_map, _mapPos));
         }
         if (0<_mapPos.get(1) && _mapPos.get(1)<=_size-1) {
-            _actions.add(new MoveWest(_map, _mapPos));
+            _Game_actions.add(new MoveWest(_map, _mapPos));
         }
     }
 
-    public ArrayList<Action> getActions() {
-        _actions = new ArrayList<Action>();
+    public ArrayList<GameAction> getActions() {
+        _Game_actions = new ArrayList<GameAction>();
         getMoveActions();
-        return _actions;
+        return _Game_actions;
     }
-    public void setActions() {_actions = new ArrayList<Action>();}
+    public void setActions() {
+        _Game_actions = new ArrayList<GameAction>();}
     public void setApproachableReq(Requirement r) {_approachReq = r;}
     public Requirement getApproachableReq() {return _approachReq;}
 

@@ -1,13 +1,12 @@
 package Action;
 
 import Event.Event;
-import IslandType.*;
 import Requirement.Requirement;
 import Player.*;
 
 import java.util.ArrayList;
 
-public abstract class Action {
+public abstract class GameAction {
     protected String _description;
     protected String _buttonDescription;
     protected ArrayList<ArrayList<Event>> _map;

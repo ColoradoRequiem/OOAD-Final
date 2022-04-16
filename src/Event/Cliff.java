@@ -1,7 +1,6 @@
 package Event;
 
-import Action.Action;
-import Player.Player;
+import Action.GameAction;
 import Requirement.*;
 
 import java.util.ArrayList;

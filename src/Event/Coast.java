@@ -1,6 +1,6 @@
 package Event;
 
-import Action.Action;
+import Action.GameAction;
 
 import java.util.ArrayList;
 import Player.*;
@@ -15,7 +15,7 @@ public class Coast extends EventDecorator {
     public String getSouthDescription() {return this._decoratedEvent.getSouthDescription()+"To the north you see a breadth of approachable shoreline.";}
     public String getWestDescription() {return this._decoratedEvent.getWestDescription()+"To the east you see a breadth of approachable shoreline.";}
     public String getEastDescription() {return this._decoratedEvent.getEastDescription()+"To the west you see a breadth of approachable shoreline.";}
-    public ArrayList<Action> getActions() {
+    public ArrayList<GameAction> getActions() {
         return this._decoratedEvent.getActions(); // Drop anchor -> Go ashore
     }
     public Requirement getApproachableReq() {return _decoratedEvent.getApproachableReq();} // just like actions and desc.

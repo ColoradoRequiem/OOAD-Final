@@ -1,7 +1,6 @@
 package Event;
 
-import Action.Action;
-import Player.*;
+import Action.GameAction;
 
 import java.util.ArrayList;
 
@@ -15,7 +14,7 @@ public class BasicLand extends EventDecorator {
     public String getSouthDescription() {return this._decoratedEvent.getSouthDescription()+"To the north you see land.";}
     public String getWestDescription() {return this._decoratedEvent.getWestDescription()+"To the east you see land.";}
     public String getEastDescription() {return this._decoratedEvent.getEastDescription()+"To the west you see land.";}
-    public ArrayList<Action> getActions() {
+    public ArrayList<GameAction> getActions() {
         return this._decoratedEvent.getActions(); // No additional actions
     }
 
