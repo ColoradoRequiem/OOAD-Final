@@ -19,9 +19,10 @@ public class GameStateActions {
         buttonFrame.setLayout(null);
         this.island = island;
         BufferedImage buttonImage;
+        System.out.println(System.getProperty("user.dir") + "\\src\\UI\\button.png");
         try {
-            buttonImage = ImageIO.read(new File("E:\\Downloads\\button.png"));
-
+            buttonImage = ImageIO.read(new File(System.getProperty("user.dir") + "\\src\\UI\\button.png"));
+            System.out.println(System.getProperty("user.dir") + "\\button.png");
         }
         catch (IOException e){
             buttonImage = null;
