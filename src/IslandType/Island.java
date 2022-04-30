@@ -63,5 +63,5 @@ public class Island {
     public ArrayList<Integer> get_position(){
         return _position;
     }
-
+    public Player get_player(){return _player;}
 }

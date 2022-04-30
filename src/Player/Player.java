@@ -8,7 +8,8 @@ public class Player {
     private ArrayList<Crew> _crew = new ArrayList<Crew>();
 
     public Player() {
-        _name = "Admin";
+        _name = "Admin";//Admin
+        _crew.add(new Crew());
         _crew.add(new Crew());
     }
 

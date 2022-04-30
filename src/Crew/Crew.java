@@ -32,4 +32,5 @@ public class Crew extends Utils {
     }
 
     public String getJob() {return _job;}
+    public String getName(){return _name;}
 }
