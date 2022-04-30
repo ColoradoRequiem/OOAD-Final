@@ -19,15 +19,15 @@ public class Island {
 
     public Island() {
         _player = new Player();
-        _season = Utils.randSeason();
-        _map = make(new Star());
+        // _season = Utils.randSeason();
+        _map = make(new StarIsland());
         _position.add(0);
         _position.add(0);
     }
     public Island(Season s) {
         _player = new Player();
         _season = s;
-        _map = make(new Star());
+        _map = make(new StarIsland());
         _position.add(0);
         _position.add(0);
     }
@@ -64,4 +64,6 @@ public class Island {
         return _position;
     }
     public Player get_player(){return _player;}
+}
+
 }

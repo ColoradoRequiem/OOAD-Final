@@ -4,7 +4,7 @@ import Event.Event;
 
 import java.util.ArrayList;
 
-public class MoveWest extends GameAction {
+public class MoveWest extends GameActionDeterminate {
     public MoveWest(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
         _mapPos = mapPos;
         _map = map;

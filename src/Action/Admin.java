@@ -3,9 +3,10 @@ package Action;
 import java.util.ArrayList;
 import Event.Event;
 import Requirement.NameRequirement;
+import java.util.*;
 
-public class GameActionAdmin extends GameAction {
-    public GameActionAdmin(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
+public class Admin extends GameActionDeterminate {
+    public Admin(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
         _mapPos = mapPos;
         _map = map;
 

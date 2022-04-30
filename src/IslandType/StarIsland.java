@@ -1,9 +1,9 @@
 package IslandType;
 import Event.*;
-
+import com.company.Utils;
 import java.util.ArrayList;
 
-public class Star extends Utils implements CreateIsland  {
+public class StarIsland extends Utils implements CreateIsland  {
     public ArrayList<ArrayList<Event>> make(int size) { // make size always odd to have a center
         ArrayList<ArrayList<Event>> map = new ArrayList<ArrayList<Event>>();
         for (int i=0; i<size; i++) {
