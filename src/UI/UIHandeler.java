@@ -3,11 +3,16 @@ package UI;
 import IslandType.Island;
 
 import javax.swing.*;
+import java.awt.GraphicsEnvironment;
+import java.awt.GraphicsDevice;
+
 
 public class UIHandeler {
     Island island;
     JFrame frame;
     JTextArea islandDescription;
+    static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
+
     public UIHandeler (Island island){
         this.island = island;
         GameStateActions actionButtonFrame = new GameStateActions(island);
