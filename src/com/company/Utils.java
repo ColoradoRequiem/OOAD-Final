@@ -1,14 +1,22 @@
-package IslandType;
+package com.company;
 
 import IslandType.Season;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+
+
+
+import java.io.File;
+import java.io.FileInputStream;
 
 public class Utils {
     public static double random() {
@@ -45,5 +53,41 @@ public class Utils {
             return -1;
         }
 
+    } // User input
+    public static int getNumLines(String path) {
+        String filePath = System.getProperty("user.dir") + path;
+        File file = new File(filePath);
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            byte[] byteArray = new byte[(int)file.length()];
+            fis.read(byteArray);
+            String data = new String(byteArray);
+            String[] stringArray = data.split("\r\n");
+            return stringArray.length-1;
+        } catch(IOException ioe) {
+            return -1;
+        }
     }
+    public static String getRandomLine(String path) {
+        try {
+            int max = getNumLines(path);
+            int r = random(0,max);
+            String specific_line_text = Files.readAllLines(Paths.get(System.getProperty("user.dir") + path)).get(r);
+            return specific_line_text;
+        } catch(IOException ioe) {
+            return null;
+        }
+    }
+
+    public static String randomSex() {
+        int s = random(0,1);
+        if (s==1) {
+            return "Male";
+        }
+        else {
+            return "Female";
+        }
+    }
+
+
 }

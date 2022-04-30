@@ -16,7 +16,7 @@ public class Cliff extends EventDecorator {
     public String getSouthDescription() {return this._decoratedEvent.getSouthDescription()+"To the north you see towering cliffs.";}
     public String getWestDescription() {return this._decoratedEvent.getWestDescription()+"To the east you see towering cliffs.";}
     public String getEastDescription() {return this._decoratedEvent.getEastDescription()+"To the west you see towering cliffs.";}
-    public ArrayList<Action> getActions() {
+    public ArrayList<GameAction> getActions() {
         return this._decoratedEvent.getActions();
     }
     public Requirement getApproachableReq() {return _decoratedEvent.getApproachableReq();} // just like actions and desc.

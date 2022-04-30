@@ -5,14 +5,12 @@ import Requirement.Requirement;
 import Player.*;
 
 import java.util.ArrayList;
+import java.util.*;
 
 public abstract class GameAction {
     protected String _description;
     protected String _buttonDescription;
-    protected ArrayList<ArrayList<Event>> _map;
-    protected ArrayList<Integer> _mapPos;
     protected Requirement _req;
-
 
     public abstract ArrayList<Integer> click(); // always return new position
     public abstract String getDescription();
@@ -24,4 +22,9 @@ public abstract class GameAction {
         else if (_req.getValue(p)==true) {return true;}
         else {return false;}
     }
+}
+
+abstract class GameActionDeterminate extends GameAction {
+    protected ArrayList<ArrayList<Event>> _map;
+    protected ArrayList<Integer> _mapPos;
 }

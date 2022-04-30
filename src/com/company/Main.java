@@ -16,11 +16,12 @@ import UI.GameStateActions;
 import UI.ImageJframe;
 import UI.UIHandeler;
 
-public class Main {
+public class Main extends Utils {
 
     public static void main(String[] args) {
-        Island test = new Island();
-        UIHandeler handler = new UIHandeler(test);
+
+         Island test = new Island();
+         UIHandeler handler = new UIHandeler(test);
             /**JTextArea IslandDescription = new JTextArea(test.getDescription());
             IslandDescription.setLineWrap(true);
             IslandDescription.setWrapStyleWord(true);
