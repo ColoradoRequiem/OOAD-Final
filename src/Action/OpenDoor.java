@@ -19,7 +19,7 @@ public class OpenDoor extends GameActionDeterminate {
         return _description;
     }
 
-    public ArrayList<Integer> click() { // exit
+    public ArrayList<Integer> click(Player p) { // exit
         return null;
     }
 }

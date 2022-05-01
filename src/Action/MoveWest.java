@@ -18,7 +18,7 @@ public class MoveWest extends GameActionDeterminate {
         return _description;
     }
 
-    public ArrayList<Integer> click() {
+    public ArrayList<Integer> click(Player p) {
         ArrayList<Integer> newPos = new ArrayList<Integer>();
         newPos.add(_mapPos.get(0));
         newPos.add(_mapPos.get(1)-1);

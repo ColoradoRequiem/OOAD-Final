@@ -31,7 +31,7 @@ public class TutorialIsland extends Utils implements CreateIsland  {
 
         ArrayList<Event> row1 = new ArrayList<Event>();
         row1.add(new Cliff(new Event(1,0, size, map)));
-        row1.add(new HiddenDoor(new BasicLand(new Event(1,1, size, map))));
+        row1.add(new Chest(new BasicLand(new Event(1,1, size, map))));
 //        row1.add(new Coast(new Event(1,2, size, map)));
 //        row1.add(new BasicWater(new Event(1,3, size, map)));
 //        row1.add(new BasicWater(new Event(1,4, size, map)));

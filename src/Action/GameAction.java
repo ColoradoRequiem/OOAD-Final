@@ -12,7 +12,7 @@ public abstract class GameAction {
     protected String _buttonDescription;
     protected Requirement _req;
 
-    public abstract ArrayList<Integer> click(); // always return new position
+    public abstract ArrayList<Integer> click(Player p); // always return new position
     public abstract String getDescription(Player p);
     public String getButtonDescription() {
         return _buttonDescription;
