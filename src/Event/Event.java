@@ -6,6 +6,8 @@ import Requirement.Requirement;
 import java.util.ArrayList;
 import java.util.*;
 
+import Player.*;
+
 public class Event {
     private ArrayList<GameAction> _Game_actions = new ArrayList<GameAction>();
     private String _description;
@@ -38,19 +40,19 @@ public class Event {
 
         // _approachable = true;
     }
-    public String getDescription() {
+    public String getDescription(Player p) {
         String desc = _description;
         ArrayList<GameAction> gameActionList = getActions();
         for (GameAction a : gameActionList) { // need get actions for decorator here
-            desc += " "+a.getDescription();
+            desc += " "+a.getDescription(p);
         }
         return desc;
     }
 
-    public String getNorthDescription() {return _northDescription;}
-    public String getSouthDescription() {return _southDescription;}
-    public String getWestDescription() {return _westDescription;}
-    public String getEastDescription() {return _eastDescription;}
+    public String getNorthDescription(Player p) {return _northDescription;}
+    public String getSouthDescription(Player p) {return _southDescription;}
+    public String getWestDescription(Player p) {return _westDescription;}
+    public String getEastDescription(Player p) {return _eastDescription;}
 
     public void getMoveActions() {
         if (0<=_mapPos.get(0) && _mapPos.get(0)<_size-1) { // need some boolean for if this move is possible

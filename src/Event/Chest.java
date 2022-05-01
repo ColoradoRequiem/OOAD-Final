@@ -6,12 +6,12 @@ import Player.Player;
 import java.util.ArrayList;
 
 
-public class Admin extends EventDecorator {
-    public Admin(Event e) {
+public class Chest extends EventDecorator {
+    public Chest(Event e) {
         _decoratedEvent = e;
     }
     public String getDescription(Player p) {return this._decoratedEvent.getDescription(p);}
-    public String getNorthDescription(Player p) {return this._decoratedEvent.getNorthDescription(p);}
+    public String getNorthDescription(Player p) {return this._decoratedEvent.getNorthDescription(p)+" A large wooden box lies on the ground there.";}
     public String getSouthDescription(Player p) {return this._decoratedEvent.getSouthDescription(p);}
     public String getWestDescription(Player p) {return this._decoratedEvent.getWestDescription(p);}
     public String getEastDescription(Player p) {return this._decoratedEvent.getEastDescription(p);}

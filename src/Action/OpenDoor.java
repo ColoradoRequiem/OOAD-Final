@@ -3,16 +3,16 @@ package Action;
 import java.util.ArrayList;
 import Event.Event;
 import Player.Player;
+import Requirement.CrewAttrRequirement;
 import Requirement.NameRequirement;
 import java.util.*;
 
-public class Admin extends GameActionDeterminate {
-    public Admin(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
+public class OpenDoor extends GameActionDeterminate {
+    public OpenDoor(ArrayList<ArrayList<Event>> map, ArrayList<Integer> mapPos) {
         _mapPos = mapPos;
         _map = map;
-
-        _req = new NameRequirement();
-        _buttonDescription = "(Admin: Win Game).";
+        _buttonDescription = "Open the door.";
+        _req = new CrewAttrRequirement("WIS", 1);
     }
 
     public String getDescription(Player p) {

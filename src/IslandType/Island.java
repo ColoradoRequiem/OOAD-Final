@@ -5,13 +5,14 @@ import Event.Event;
 import Player.Player;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
 public class Island {
     public Season _season;
     private ArrayList<ArrayList<Event>> _map;
-    int _size = 7;
+    int _size;
 
     private Player _player;
     private ArrayList<Integer> _position = new ArrayList<Integer>();
@@ -20,20 +21,20 @@ public class Island {
     public Island() {
         _player = new Player();
         // _season = Utils.randSeason();
-        _map = make(new StarIsland());
+        _map = make(new TutorialIsland());
         _position.add(0);
         _position.add(0);
     }
     public Island(Season s) {
         _player = new Player();
         _season = s;
-        _map = make(new StarIsland());
+        _map = make(new TutorialIsland());
         _position.add(0);
         _position.add(0);
     }
 
-    public String getDescription() {
-        return _map.get(_position.get(0)).get(_position.get(1)).getDescription() + "\n";
+    public String getDescription(Player p) {
+        return _map.get(_position.get(0)).get(_position.get(1)).getDescription(p) + "\n";
     }
 
     public ArrayList<GameAction> getAvailableActions() {
@@ -54,7 +55,10 @@ public class Island {
     }
 
     public ArrayList<ArrayList<Event>> make(CreateIsland type) {
-        return type.make(_size);
+        ArrayList<ArrayList<Event>> ret = type.make();
+        // System.out.println(ret.size());
+        _size = ret.size();
+        return ret;
     }
     public void setPosition(int x, int y) {
         _position.set(0, x);
@@ -64,6 +68,4 @@ public class Island {
         return _position;
     }
     public Player get_player(){return _player;}
-}
-
 }

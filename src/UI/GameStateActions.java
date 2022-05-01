@@ -83,7 +83,7 @@ public class GameStateActions {
         return buttons;
     }
     private void addTextArea(){
-        JTextArea text = new JTextArea(island.getDescription());
+        JTextArea text = new JTextArea(island.getDescription(island.get_player()));
         text.setLineWrap(true);
         text.setWrapStyleWord(true);
         text.setOpaque(false);

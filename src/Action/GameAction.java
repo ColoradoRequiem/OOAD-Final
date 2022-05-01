@@ -13,7 +13,7 @@ public abstract class GameAction {
     protected Requirement _req;
 
     public abstract ArrayList<Integer> click(); // always return new position
-    public abstract String getDescription();
+    public abstract String getDescription(Player p);
     public String getButtonDescription() {
         return _buttonDescription;
     }
