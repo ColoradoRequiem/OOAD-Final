@@ -1,6 +1,7 @@
 package Action;
 
 import Event.Event;
+import Player.Player;
 
 import java.util.ArrayList;
 
@@ -12,8 +13,8 @@ public class MoveSouth extends GameActionDeterminate {
         _req = _map.get(_mapPos.get(0)+1).get(_mapPos.get(1)).getApproachableReq();
     }
 
-    public String getDescription() {
-        _description = _map.get(_mapPos.get(0)+1).get(_mapPos.get(1)).getNorthDescription(); // traveling south
+    public String getDescription(Player p) {
+        _description = _map.get(_mapPos.get(0)+1).get(_mapPos.get(1)).getNorthDescription(p); // traveling south
         return _description;
     }
 

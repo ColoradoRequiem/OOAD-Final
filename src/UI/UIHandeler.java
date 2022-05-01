@@ -17,7 +17,7 @@ public class UIHandeler {
         this.island = island;
         GameStateActions actionButtonFrame = new GameStateActions(island);
         frame = actionButtonFrame.getButtonFrame();
-        islandDescription = new JTextArea(island.getDescription());
+        islandDescription = new JTextArea(island.getDescription(island.get_player()));
         islandDescription.setLineWrap(true);
         islandDescription.setWrapStyleWord(true);
         islandDescription.setBounds(200,100,200,150);
