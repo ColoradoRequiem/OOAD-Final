@@ -35,9 +35,15 @@ public class Crew extends Utils {
         _held = null;
         _worn = null;
     }
-
+    public Crew(String _name, String _race, String _job, String _personality, ArrayList<Integer> _attr){
+        this._name = _name;
+        this._race = _race;
+        this._job = _job;
+        this._attr = _attr;
+    }
+    public String getPersonality() {return _personality;}
     public String getJob() {return _job;}
-
+    public String getRace(){return _race;}
     public String getName(){return _name;}
     public int getAttr(String attr) {
         switch (attr) { // STR CON DEX CHA WIS INT
@@ -56,6 +62,10 @@ public class Crew extends Utils {
             default:
                 return -1;
         }
+    }
+
+    public ArrayList<Integer> getAttrArr() {
+        return _attr;
     }
     public Item getRightHandItem() {
         return _rightHand;

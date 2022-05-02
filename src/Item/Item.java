@@ -32,4 +32,3 @@ class Clothing extends Item { // might build economy off this
         return _baseDef + c.getAttr(_stat);
     }
 }
-

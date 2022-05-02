@@ -111,7 +111,7 @@ public class GameStateActions {
                 exit();
             }
         });
-        
+
         crewMenu.add(excursionManagment);
         addCrewItemManagementMenus(crewMenu, getCrewItemManagementMenus());
         gameMenu.add(getSavesMenu());
