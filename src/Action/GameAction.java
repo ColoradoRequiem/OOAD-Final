@@ -22,9 +22,14 @@ public abstract class GameAction {
         else if (_req.getValue(p)==true) {return true;}
         else {return false;}
     }
+    public void setButtonDescription(String text) {
+        _buttonDescription = text;
+    }
 }
 
 abstract class GameActionDeterminate extends GameAction {
     protected ArrayList<ArrayList<Event>> _map;
-    protected ArrayList<Integer> _mapPos;
+    protected ArrayList<Integer> _mapPos = new ArrayList<>();
+
+    // public ArrayList<Integer> getMapPos() {return _mapPos;}
 }

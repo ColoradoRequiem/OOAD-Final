@@ -63,5 +63,7 @@ public class Crew extends Utils {
     public Item getLeftHandItem() {
         return _leftHand;
     }
+    public void setRightHandItem(Item i) {_rightHand = i;}
+    public void setLeftHandItem(Item i) {_leftHand = i;}
 
 }

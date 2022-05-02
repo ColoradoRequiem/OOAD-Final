@@ -70,11 +70,11 @@ public class GameStateActions {
             {
 
                 ArrayList<Integer> newPos = action.click(island.get_player());
-                if (newPos !=null) {
+                if (newPos != null) {
                     island.setPosition(newPos.get(0), newPos.get(1));
-                    this.update();
                     System.out.println(island.get_position());
                 }
+                this.update();
             });
             buttons.add(temp);
             i++;

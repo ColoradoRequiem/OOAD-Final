@@ -21,16 +21,19 @@ public class Island {
     public Island() {
         _player = new Player();
         // _season = Utils.randSeason();
-        _map = make(new TutorialIsland());
-        _position.add(0);
-        _position.add(0);
+        TutorialIsland tut = new TutorialIsland();
+        _position = tut.getStart();
+        _size = tut.getSize();
+        _map = make(tut);
+
     }
     public Island(Season s) {
         _player = new Player();
         _season = s;
-        _map = make(new TutorialIsland());
-        _position.add(0);
-        _position.add(0);
+        TutorialIsland tut = new TutorialIsland();
+        _position = tut.getStart();
+        _size = tut.getSize();
+        _map = make(tut);
     }
 
     public String getDescription(Player p) {
