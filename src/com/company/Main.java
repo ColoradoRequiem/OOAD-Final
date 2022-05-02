@@ -1,5 +1,6 @@
 package com.company;
 
+import Crew.Crew;
 import IslandType.*;
 import Action.*;
 import javax.imageio.ImageIO;
@@ -12,6 +13,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Item.Cutlass;
+import Observer.ConcreteObserver;
+import Player.Player;
+import SaveLoader.SaveLoader;
 import UI.GameStateActions;
 import UI.ImageJframe;
 import UI.UIHandeler;
@@ -19,9 +24,17 @@ import UI.UIHandeler;
 public class Main extends Utils {
 
     public static void main(String[] args) {
-
-         Island test = new Island();
-         UIHandeler handler = new UIHandeler(test);
+         File save = new File(System.getProperty("user.dir") + "\\src\\Saves\\Save.txt");
+         ConcreteObserver observer = new ConcreteObserver(save);
+         Player testPlayer = new Player();
+         observer.update(testPlayer);
+         observer.update(new Cutlass());
+         observer.update(new Crew());
+        observer.Save();
+        SaveLoader saveLoader = new SaveLoader(save);
+        saveLoader.getPlayer();
+         //Island test = new Island();
+         //UIHandeler handler = new UIHandeler(test);
             /**JTextArea IslandDescription = new JTextArea(test.getDescription());
             IslandDescription.setLineWrap(true);
             IslandDescription.setWrapStyleWord(true);

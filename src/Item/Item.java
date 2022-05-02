@@ -23,16 +23,6 @@ abstract class Weapon extends Item { // might build economy off this
     }
 }
 
-class Cutlass extends Weapon {
-    Cutlass() {
-        _name = "Cutlass";
-        _baseAtk = 2;
-        _stat = "STR";
-        _attr.add("Slashing");
-    }
-}
-
-
 
 class Clothing extends Item { // might build economy off this
     private int _baseDef;

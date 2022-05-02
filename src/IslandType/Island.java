@@ -66,4 +66,3 @@ public class Island {
     public Player get_player(){return _player;}
 }
 
-}
